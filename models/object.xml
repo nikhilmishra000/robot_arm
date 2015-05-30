@@ -1,0 +1,8 @@
+<KinBody name="Object">
+	<Body name="Box" type="static">
+		<Translation>-0.3 0.05 0.4</Translation>
+		<Geom type="box">
+			<Extents>0.02 0.1 0.02</Extents>
+		</Geom>
+	</Body>
+</KinBody>

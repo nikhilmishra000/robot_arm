@@ -1,0 +1,202 @@
+<Robot name="myarmNL">
+  <KinBody>
+
+    <Body name="Base" type="static">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>base.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Shoulder" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>shoulder.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Upperarm" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>upperarm.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Elbow" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>elbow.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Forearm" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>forearm.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Wrist" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>wrist.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Palm" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>palm.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger11R" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>finger11r.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger12R" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>finger12r.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger11L" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>finger11l.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger12L" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>finger12l.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger2R" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>fingerr2.wrl</data>
+      </Geom>
+    </Body>
+
+    <Body name="Finger2L" type="dynamic">
+      <Translation>0.0 0.0 0.0</Translation>
+      <Geom type="trimesh">
+	<data>fingerl2.wrl</data>
+      </Geom>
+    </Body>
+
+    <Joint name="ShoulderPan" type="hinge">
+      <Body>Base</Body>
+      <Body>Shoulder</Body>
+      <Anchor>0.047 0.251 0.085</Anchor>
+      <Axis>0 0 1</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="ShoulderRoll" type="hinge">
+      <Body>Shoulder</Body>
+      <Body>Upperarm</Body>
+      <Anchor>0.04738 0.0 0.09768</Anchor>
+      <Axis>0 1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="ElbowPan" type="hinge">
+      <Body>Upperarm</Body>
+      <Body>Elbow</Body>
+      <Anchor>0.04763 0.66877 0.09668 </Anchor>
+      <Axis>-1 0 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="ElbowRoll" type="hinge">
+      <Body>Elbow</Body>
+      <Body>Forearm</Body>
+      <Anchor>0.04763 0.74790 0.09668</Anchor>
+      <Axis>0 1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="WristPan" type="hinge">
+      <Body>Forearm</Body>
+      <Body>Wrist</Body>
+      <Anchor>0.04763 0.97585 0.09668</Anchor>
+      <Axis>0 0 -1</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="WristRoll" type="hinge">
+      <Body>Wrist</Body>
+      <Body>Palm</Body>
+      <Anchor>0.03943 0.97420 0.09763</Anchor>
+      <Axis>-1 0 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerR11" type="hinge">
+      <Body>Palm</Body>
+      <Body>Finger11R</Body>
+      <Anchor>-0.01827 0.97575 0.08513</Anchor>
+      <Axis>0 -1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerR12" type="hinge" enable="false" mimic_pos="FingerR11">
+      <Body>Palm</Body>
+      <Body>Finger12R</Body>
+      <Anchor>-0.01827 0.97575 0.06013</Anchor>
+      <Axis>0 -1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerR2" type="hinge" enable="false" mimic_pos="FingerR11">
+      <Body>Finger11R</Body>
+      <Body>Finger2R</Body>
+      <Anchor>-0.06827 0.97575 0.08513</Anchor>
+      <Axis>0 1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerL11" type="hinge" enable="false" mimic_pos="FingerR11">
+      <Body>Palm</Body>
+      <Body>Finger11L</Body>
+      <Anchor>-0.01827 0.97575 0.11013</Anchor>
+      <Axis>0 1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerL12" type="hinge" enable="false" mimic_pos="FingerL11">
+      <Body>Palm</Body>
+      <Body>Finger12L</Body>
+      <Anchor>-0.01827 0.97575 0.13513</Anchor>
+      <Axis>0 1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+    <Joint name="FingerL2" type="hinge" enable="false" mimic_pos="FingerL11">
+      <Body>Finger11L</Body>
+      <Body>Finger2L</Body>
+      <Anchor>-0.06827 0.97575 0.11013</Anchor>
+      <Axis>0 -1 0</Axis>
+      <limitsdeg>0 180</limitsdeg>
+    </Joint>
+
+
+  </KinBody>
+
+    <Manipulator name="grip">
+	<Effector>Palm</Effector>
+	<Base>Base</Base>
+	<Joints>FingerR11 FingerR12 FingerL11 FingerL12 FingerR2 FingerL2</Joints>
+	<ClosingDirection>1 1 1 1 1 1</ClosingDirection>
+	<Axis>0 1 0</Axis>
+    </Manipulator>
+
+</Robot>

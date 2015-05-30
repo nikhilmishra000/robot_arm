@@ -1,0 +1,10 @@
+<KinBody name="Table">
+
+  <Body name="Table" type="static">
+    <Translation>0.0 -0.01 0.0</Translation>
+    <Geom type="box">
+	<Extents>1 0.02 1</Extents>
+    </Geom>
+  </Body>
+
+</KinBody>
